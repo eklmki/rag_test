@@ -18,8 +18,7 @@ pdf_folder_path = "source_data"
 documents = []
 for file in os.listdir():
     if file.endswith('.pdf'):
-        pdf_path = os.path.join(pdf_folder_path, file)
-        loader = PyPDFLoader(pdf_path)
+        loader = PyPDFLoader(file)
         documents.extend(loader.load())
 
 # split the doc into smaller chunks
