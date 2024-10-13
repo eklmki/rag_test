@@ -16,8 +16,7 @@ doc_path = "source_data"
 chroma_path = "contracts_chroma"
 pdf_folder_path = "source_data"
 documents = []
-for file in os.listdir():
-    if file.endswith('.pdf'):
+for file in ["tietoala2023.pdf", "tyoehtosopimus20222024.pdf"]:
         loader = PyPDFLoader(file)
         documents.extend(loader.load())
 
