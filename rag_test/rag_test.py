@@ -13,10 +13,10 @@ os.environ["OPENAI_API_KEY"] = "sk-proj-8FqpllUlcdCvSxqgkV1Z0pIuJM-0i" \
                                "-FiQ5MHd3XDt2cbmtlkpj5_z_aCRVMl8-dkB4i4QF4I379II2HwA"
 openai_api_key = os.getenv('OPENAI_API_KEY')
 doc_path = "source_data"
-chroma_path = "src/contracts_chroma"
+chroma_path = "contracts_chroma"
 pdf_folder_path = "source_data"
 documents = []
-for file in os.listdir(pdf_folder_path):
+for file in os.listdir():
     if file.endswith('.pdf'):
         pdf_path = os.path.join(pdf_folder_path, file)
         loader = PyPDFLoader(pdf_path)
