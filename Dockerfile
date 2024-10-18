@@ -11,6 +11,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/eklmki/rag_test.git .
 
+RUN python -m venv /opt/venv
+# Enable venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+
 RUN pip install -r rag_test/requirements.txt
 
 EXPOSE 8501

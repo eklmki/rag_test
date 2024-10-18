@@ -1,0 +1,2 @@
+docker-compose up --force-recreate
+ docker build -t streamlit-chroma-app . --no-cache

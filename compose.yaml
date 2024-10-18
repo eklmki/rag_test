@@ -1,0 +1,13 @@
+version: '3.11'
+services:
+  streamlit-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./source_data/:/rag_test/source_data/
+
+  chromadb:
+    image: chromadb/chroma:latest  # Assuming there’s a public ChromaDB image
+    ports:
+      - "8000:8000"

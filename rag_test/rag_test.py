@@ -16,9 +16,13 @@ doc_path = "source_data"
 chroma_path = "contracts_chroma"
 pdf_folder_path = "source_data"
 documents = []
-for file in ["tietoala2023.pdf", "tyoehtosopimus20222024.pdf"]:
-        loader = PyPDFLoader(file)
+
+for file in os.listdir(pdf_folder_path):
+    if file.endswith('.pdf'):
+        pdf_path = os.path.join(pdf_folder_path, file)
+        loader = PyPDFLoader(pdf_path)
         documents.extend(loader.load())
+
 
 # split the doc into smaller chunks
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
